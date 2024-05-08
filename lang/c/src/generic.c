@@ -3909,7 +3909,7 @@ avro_generic_decimal_set_decimal(const avro_value_iface_t *viface,
 		}
 	}
 
-	uint64_t boundary = 1 << (8 * min_size - 1);
+	uint64_t boundary = ((uint64_t) 1) << (8 * min_size - 1);
 	if (signed_unscaled > 0 &&
 	    (uint64_t) signed_unscaled > (boundary - 1)) {
 		return ERANGE;
